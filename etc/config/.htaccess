@@ -1,0 +1,31 @@
+# check if RewriteModule is availbale
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+# prevent httpd from serving dotfiles (.htaccess, .svn, .git, etc.) - except let's encrypt challenge
+RedirectMatch 403 ^/?\.(?!/well-known/acme-challenge/[\w-]{43}$)
+
+RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+RewriteRule ^(.*) - [E=BASE:%1]
+
+# Sets the HTTP_AUTHORIZATION header removed by apache
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule .? - [L]
+
+RewriteRule .? %{ENV:BASE}/index.php [L]
+
+</IfModule>
+
+# Config files from vendor should not be readable via browser
+<FilesMatch "composer.json">
+    Order Allow,Deny
+    Deny from All
+</FilesMatch>
+
+<FilesMatch "composer.lock">
+    Order Allow,Deny
+    Deny from All
+</FilesMatch>
