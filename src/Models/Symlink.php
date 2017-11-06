@@ -17,6 +17,7 @@ final class Symlink
 
     /**
      * @throws \InvalidArgumentException
+     * @SuppressWarnings(PHPMD.ConstructorNewOperator)
      */
     public function __construct(string $source, string $target)
     {

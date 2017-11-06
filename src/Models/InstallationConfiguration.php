@@ -50,6 +50,7 @@ final class InstallationConfiguration
 
     /**
      * @throws \InvalidArgumentException
+     * @SuppressWarnings(PHPMD.ConstructorNewOperator)
      */
     public function __construct(
         Config $composerConfig,
