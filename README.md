@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/move-elevator/humhub-composer-installer.svg?branch=master)](https://travis-ci.org/move-elevator/humhub-composer-installer)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![Latest Stable Version](https://poser.pugx.org/move-elevator/humhub-composer-installer/v/stable)](https://packagist.org/packages/move-elevator/humhub-composer-installer)
+[![Total Downloads](https://poser.pugx.org/move-elevator/humhub-composer-installer/downloads)](https://packagist.org/packages/move-elevator/humhub-composer-installer)
+
 ### Humhub Composer Installer
 
 This package installs HumHub in version 1.1.* into a web directory which can be configured in the composer.json of your project and is relative to the project-vendor dir(`humhub: web-dir`).
