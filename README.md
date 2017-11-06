@@ -5,7 +5,7 @@
 
 ### Humhub Composer Installer
 
-This package installs HumHub in version 1.1.* into a web directory which can be configured in the composer.json of your project and is relative to the project-vendor dir(`humhub: web-dir`).
+This package installs HumHub in version 1.2.* into a web directory which can be configured in the composer.json of your project and is relative to the project-vendor dir(`humhub: web-dir`).
 You can also configure a configuration directory (`humhub: config-dir`). In that directory you can put a project index.php, .htaccess and protected/yii which will be symlinked into the humhub web directory.
 
 You can also configure a folder for your own modules directory (`humhub: module-dir`) and  for the themes directory (`humhub: theme-dir`) These will also be symlinked into the humhub web directory and should be relative to the project-vendor-dir.
@@ -19,8 +19,8 @@ Add the following lines to the composer.json of your project:
 ```
   "require": {
     "bower-asset/select2-bootstrap-theme": "0.1.0-beta.4",
-    "humhub/humhub": "v1.1.2",
-    "move-elevator/humhub-composer-installer": "0.1.0"
+    "humhub/humhub": "v1.2.3",
+    "move-elevator/humhub-composer-installer": "~1.0"
   },
   "autoload": {
     "psr-4": {
