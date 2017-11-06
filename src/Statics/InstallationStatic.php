@@ -20,12 +20,6 @@ final class InstallationStatic
     const HUMHUB_CORE_STATICS_DIRECTORY = 'static';
 
     const HUMHUB_CORE_PROTECTED_DIRECTORY = 'protected';
-    const HUMHUB_CORE_CSS_DIRECTORY = 'css';
-    const HUMHUB_CORE_JAVASCRIPT_DIRECTORY = 'js';
-    const HUMHUB_CORE_FONTS_DIRECTORY = 'fonts';
-    const HUMHUB_CORE_ICON_DIRECTORY = 'ico';
-    const HUMHUB_CORE_IMAGE_DIRECTORY = 'img';
-    const HUMHUB_CORE_RESOURCE_DIRECTORY = 'resources';
     const HUMHUB_CORE_PROTECTED_CONFIG_DIRECTORY = 'protected/config';
     const HUMHUB_CORE_PROTECTED_HUMHUB_DIRECTORY = 'protected/humhub';
     const HUMHUB_CORE_PROTECTED_RUNTIME_DIRECTORY = 'protected/runtime';
@@ -44,5 +38,3 @@ final class InstallationStatic
     {
     }
 }
-
-

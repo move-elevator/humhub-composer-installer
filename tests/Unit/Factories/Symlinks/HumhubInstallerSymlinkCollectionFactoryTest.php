@@ -25,6 +25,6 @@ class HumhubInstallerSymlinkCollectionFactoryTest extends TestCase
 
         $collection = HumhubInstallerSymlinkCollectionFactory::create($installationConfiguration);
 
-        $this->assertEquals(16, $collection->count());
+        $this->assertEquals(12, $collection->count());
     }
 }

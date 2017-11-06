@@ -53,7 +53,7 @@ class InstallationServiceTest extends TestCase
         $fileSystemMock = $this->getMockBuilder(Filesystem::class)
             ->setMethods(['mkdir', 'symlink'])
             ->getMock();
-        $fileSystemMock->expects($this->exactly(16))
+        $fileSystemMock->expects($this->exactly(12))
             ->method('symlink');
         $fileSystemMock->expects($this->exactly(1))
             ->method('mkdir');
