@@ -15,7 +15,8 @@ final class InstallationConfigurationFactory
 
         $humhubConfig = [
             InstallationStatic::COMPOSER_EXTRA_WEB_DIRECTORY => InstallationStatic::DEFAULT_WEB_DIRECTORY,
-            InstallationStatic::COMPOSER_EXTRA_CONFIGURATION_DIRECTORY => InstallationStatic::DEFAULT_CONFIGURATION_DIRECTORY_RELATIVE_PATH_FROM_INSTALLATION_PACKAGE,
+            InstallationStatic::COMPOSER_EXTRA_CONFIGURATION_DIRECTORY =>
+                InstallationStatic::DEFAULT_CONFIGURATION_DIRECTORY_RELATIVE_PATH_FROM_INSTALLATION_PACKAGE,
             InstallationStatic::COMPOSER_EXTRA_PROJECT_MODULE_DIRECTORY => null,
             InstallationStatic::COMPOSER_EXTRA_PROJECT_THEME_DIRECTORY => null,
         ];

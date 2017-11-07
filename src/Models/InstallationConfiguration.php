@@ -61,7 +61,8 @@ final class InstallationConfiguration
 
         if (empty($vendorDirectory)) {
             throw new \InvalidArgumentException(
-                'could not find any vendor directory from the composer configuration', 1497861291
+                'could not find any vendor directory from the composer configuration',
+                1497861291
             );
         }
 
@@ -77,18 +78,24 @@ final class InstallationConfiguration
         $this->setHumhubConfigurationDirectory($projectConfiguration->getConfigurationDirectory());
 
         $this->humhubCoreDirectory = sprintf(
-            '%s/%s', $this->getVendorDirectory(), InstallationStatic::HUMHUB_CORE_DIRECTORY_RELATIVE_FROM_VENDOR
+            '%s/%s',
+            $this->getVendorDirectory(),
+            InstallationStatic::HUMHUB_CORE_DIRECTORY_RELATIVE_FROM_VENDOR
         );
 
         if (false === empty($projectConfiguration->getModuleDirectory())) {
             $this->humhubProjectModuleDirectory = sprintf(
-                '%s/%s', $this->getVendorDirectory(), $projectConfiguration->getModuleDirectory()
+                '%s/%s',
+                $this->getVendorDirectory(),
+                $projectConfiguration->getModuleDirectory()
             );
         }
 
         if (false === empty($projectConfiguration->getThemeDirectory())) {
             $this->humhubProjectThemeDirectory = sprintf(
-                '%s/%s', $this->getVendorDirectory(), $projectConfiguration->getThemeDirectory()
+                '%s/%s',
+                $this->getVendorDirectory(),
+                $projectConfiguration->getThemeDirectory()
             );
         }
     }

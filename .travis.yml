@@ -13,3 +13,5 @@ script:
   - ./vendor/bin/phpunit.phar -c ./phpunit.xml --debug --verbose
   - ./vendor/bin/phpmd.phar ./src text ./phpmd.xml
   - ./vendor/bin/phpstan.phar analyse -l 7 ./src
+  - ./vendor/bin/phpcpd.phar ./src
+  - ./vendor/bin/phpcs.phar ./src --standard=PSR2
