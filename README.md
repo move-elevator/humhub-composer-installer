@@ -75,12 +75,25 @@ Run each command in the current package root directory.
 ### Execute PHPSTAN checks
 
 ```
-./vendor/bin/phpstan.phar analyse -l 7 src/
+./vendor/bin/phpstan.phar analyse -l 7 ./src
+```
+
+### Execute copy paste detection
+
+```
+./vendor/bin/phpcpd.phar ./src 
+```
+
+### Execute checkstyle for PSR2
+
+```
+./vendor/bin/phpcs.phar ./src --standard=PSR2 
 ```
 
 ### TroubleShooting
 
-this package could not handle a vendor-, web-, config-, theme- or module-directory outside the project root-directory. 
+- this package could not handle a vendor-, web-, config-, theme- or module-directory outside the project root-directory.
+- there will be created no (`uploads`)-directory from this package. you can link a global directory to uploads after a deployment. so you can prevent to lose all your previous uploads. 
 
 ### TODO
 

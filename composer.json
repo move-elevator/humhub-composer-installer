@@ -50,16 +50,8 @@
         "url": "https://phar.phpunit.de/phpcpd-2.0.4.phar",
         "force-replace": true
       },
-      "pdepend": {
-        "url": "http://static.pdepend.org/php/2.5.0/pdepend.phar",
-        "force-replace": true
-      },
       "phpcs": {
         "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.9.0/phpcs.phar",
-        "force-replace": true
-      },
-      "phpmetrics": {
-        "url": "https://github.com/phpmetrics/PhpMetrics/raw/v2.2.0/releases/phpmetrics.phar",
         "force-replace": true
       },
       "phpstan": {
