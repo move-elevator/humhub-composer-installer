@@ -92,8 +92,11 @@ Run each command in the current package root directory.
 
 ### TroubleShooting
 
-- this package could not handle a vendor-, web-, config-, theme- or module-directory outside the project root-directory.
-- there will be created no (`uploads`)-directory from this package. you can link a global directory to uploads after a deployment. so you can prevent to lose all your previous uploads. 
+- This package could not handle a vendor-, web-, config-, theme- or module-directory outside the project root-directory.
+- There will be created no `uploads`-directory from this package. you can link a global directory to uploads after a deployment. so you can prevent to lose all your previous uploads.
+- Updates or downloads from the online marketplace, will be downloaded into the folder `vendor/humhub/humhub/protected/modules` and should be moved to your origin `module-dir`.
+  - At the moment there is no possibility in humhub to reconfigure these download-folder.
+  - After install a new module and move to the origin `module-dir` you should rerun the install script of this package. If you use the example above, you can run `composer run-script post-update-cmd`  
 
 ### TODO
 
