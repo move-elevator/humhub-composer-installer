@@ -22,8 +22,7 @@
     "php": ">=7.1",
     "composer/composer": "~1.5",
     "symfony/filesystem": "~3.3",
-    "webmozart/glob": "~4.1",
-    "roave/security-advisories": "dev-master"
+    "webmozart/glob": "~4.1"
   },
   "require-dev": {
     "tm/tooly-composer-script": "~1.2"
