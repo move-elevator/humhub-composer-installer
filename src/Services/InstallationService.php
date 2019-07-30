@@ -7,19 +7,11 @@ use MoveElevator\Composer\Factories\Symlinks\HumhubInstallerSymlinkCollectionFac
 use MoveElevator\Composer\Factories\Mkdirs\HumhubInstallerMkdirCollectionFactory;
 use MoveElevator\Composer\Models\InstallationConfiguration;
 use MoveElevator\Composer\Models\Symlink;
-use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 
 final class InstallationService
 {
-    /**
-     * @var InstallationConfiguration
-     */
     private $installationConfiguration;
-
-    /**
-     * @var Filesystem
-     */
     private $fileSystem;
 
     public function __construct(InstallationConfiguration $installationConfiguration, Filesystem $filesystem)
