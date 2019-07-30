@@ -12,15 +12,15 @@ final class HumHubAssetSymlinkFactory
     public static function create(InstallationConfiguration $installationConfiguration): SymlinkCollection
     {
         $symlinks = new SymlinkCollection();
-        $symlinks->append(HumhubCoreToHtdocsDirectorySymlinkFactory::create(
+        $symlinks->append(HumhubCoreToWebDirectorySymlinkFactory::create(
             InstallationStatic::COMPOSER_EXTRA_PROJECT_GRUNTFILE,
             $installationConfiguration
         ));
-        $symlinks->append(HumhubCoreToHtdocsDirectorySymlinkFactory::create(
+        $symlinks->append(HumhubCoreToWebDirectorySymlinkFactory::create(
             InstallationStatic::COMPOSER_EXTRA_PROJECT_PACKAGE_JSON,
             $installationConfiguration
         ));
-        $symlinks->append(HumhubCoreToHtdocsDirectorySymlinkFactory::create(
+        $symlinks->append(HumhubCoreToWebDirectorySymlinkFactory::create(
             InstallationStatic::COMPOSER_EXTRA_PROJECT_PACKAGE_LOCK_JSON,
             $installationConfiguration
         ));

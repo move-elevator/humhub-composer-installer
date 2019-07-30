@@ -1,17 +1,17 @@
 <?php
 
-namespace MoveElevator\Composer\Factories\Symlinks;
+namespace MoveElevator\Composer\Tests\Unit\Factories\Symlinks;
 
 use Composer\Config;
-use MoveElevator\Composer\Models\InstallationConfiguration;
+use MoveElevator\Composer\Factories\Symlinks\HumHubAssetSymlinkFactory;
 use MoveElevator\Composer\Tests\Fixture\Models\InstallationConfigurationFixture;
 use PHPUnit\Framework\TestCase;
 
-class HumhubInstallerSymlinkCollectionFactoryTest extends TestCase
+class HumhubAssetSymlinkFactoryTest extends TestCase
 {
     use InstallationConfigurationFixture;
 
-    public function testCreateCollectionWith15Entries()
+    public function testCreateCollectionWith3Entries()
     {
         $vendorDir = __DIR__ . '/../../../Fixture/VendorFolderStructure';
 
@@ -23,8 +23,8 @@ class HumhubInstallerSymlinkCollectionFactoryTest extends TestCase
 
         $installationConfiguration = $this->getInstallationConfiguration($configMock);
 
-        $collection = HumhubInstallerSymlinkCollectionFactory::create($installationConfiguration);
+        $collection = HumHubAssetSymlinkFactory::create($installationConfiguration);
 
-        $this->assertEquals(15, $collection->count());
+        $this->assertEquals(3, $collection->count());
     }
 }

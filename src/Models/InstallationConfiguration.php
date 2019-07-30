@@ -31,11 +31,6 @@ final class InstallationConfiguration
     /**
      * @var string
      */
-    private $htdocsDirectory;
-
-    /**
-     * @var string
-     */
     private $humhubCoreDirectory;
 
     /**
@@ -80,7 +75,6 @@ final class InstallationConfiguration
 
         $this->setAbsoluteProjectRootPath($composerConfig->get('vendor-dir', Config::RELATIVE_PATHS));
         $this->webDirectory = sprintf('%s/%s', $this->getVendorDirectory(), $projectConfiguration->getWebDirectory());
-        $this->htdocsDirectory = sprintf('%s/%s', $this->getVendorDirectory(), $projectConfiguration->getHtdocsDirectory());
         $this->setHumhubConfigurationDirectory($projectConfiguration->getConfigurationDirectory());
 
         $this->humhubCoreDirectory = sprintf(
@@ -124,11 +118,6 @@ final class InstallationConfiguration
     public function getWebDirectory(): string
     {
         return $this->webDirectory;
-    }
-
-    public function getHtdocsDirectory(): string
-    {
-        return $this->htdocsDirectory;
     }
 
     public function getHumhubConfigurationDirectory(): string

@@ -12,7 +12,6 @@ final class ComposerProjectConfigurationFactory
     {
         $composerProjectConfiguration = new ComposerProjectConfiguration(
             $configuration[InstallationStatic::COMPOSER_EXTRA_WEB_DIRECTORY],
-            $configuration[InstallationStatic::COMPOSER_EXTRA_HTDOCS_DIRECTORY],
             $configuration[InstallationStatic::COMPOSER_EXTRA_CONFIGURATION_DIRECTORY]
         );
 
