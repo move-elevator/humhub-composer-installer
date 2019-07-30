@@ -55,7 +55,7 @@
                 "force-replace": true
             },
             "phpunit": {
-                "url": "https://phar.phpunit.de/phpunit-8.2.5.phar",
+                "url": "https://phar.phpunit.de/phpunit-7.5.14.phar",
                 "force-replace": true
             }
         }
