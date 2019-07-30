@@ -77,32 +77,25 @@ config": {
 
 For a detailed description visit [https://asset-packagist.org/site/about](https://asset-packagist.org/site/about).
 
-
 ## Checks
 Run each command in the current package root directory.
 
 ### Execute PHPUnit tests
 
 ```
-./vendor/bin/phpunit.phar -c ./phpunit.xml --debug --verbose
+./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
 ```
 
-### Execute PHPMD checks
+### Execute PHPStan checks
 
 ```
-./vendor/bin/phpmd.phar ./src text ./phpmd.xml
+./vendor/bin/phpstan.phar analyse -l max -c ./phpstan.neon ./src/
 ```
 
-### Execute PHPSTAN checks
+### Execute phpcs fixer
 
 ```
-./vendor/bin/phpstan.phar analyse -l 7 ./src
-```
-
-### Execute copy paste detection
-
-```
-./vendor/bin/phpcpd.phar ./src 
+./vendor/bin/phpcs-fixer.phar fix ./src 
 ```
 
 ### Execute checkstyle for PSR2
