@@ -17,6 +17,7 @@ final class HumhubInstallerSymlinkCollectionFactory
         $symlinks->multipleAppend(ProjectThemesSymlinkCollectionFactory::create($installationConfiguration));
 
         $symlinks->multipleAppend(HumhubCoreSymlinkCollectionFactory::create($installationConfiguration));
+        $symlinks->multipleAppend(HumHubAssetSymlinkFactory::create($installationConfiguration));
 
         return $symlinks;
     }

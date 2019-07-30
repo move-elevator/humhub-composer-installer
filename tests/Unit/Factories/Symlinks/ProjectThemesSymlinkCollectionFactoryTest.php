@@ -11,7 +11,7 @@ class ProjectThemesSymlinkCollectionFactoryTest extends TestCase
 {
     use InstallationConfigurationFixture;
 
-    public function testCreateCollectionWith1Entries()
+    public function testCreateCollectionWith1Entry()
     {
         $vendorDir = __DIR__ . '/../../../Fixture/VendorFolderStructure';
 

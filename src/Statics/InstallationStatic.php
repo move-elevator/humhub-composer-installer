@@ -12,6 +12,9 @@ final class InstallationStatic
     const DEFAULT_CONFIGURATION_DIRECTORY_RELATIVE_PATH_FROM_INSTALLATION_PACKAGE = 'etc/config';
     const COMPOSER_EXTRA_PROJECT_MODULE_DIRECTORY = 'module-dir';
     const COMPOSER_EXTRA_PROJECT_THEME_DIRECTORY = 'theme-dir';
+    const COMPOSER_EXTRA_PROJECT_GRUNTFILE = 'Gruntfile.js';
+    const COMPOSER_EXTRA_PROJECT_PACKAGE_JSON = 'package.json';
+    const COMPOSER_EXTRA_PROJECT_PACKAGE_LOCK_JSON = 'package-lock.json';
 
     const HUMHUB_CORE_DIRECTORY_RELATIVE_FROM_VENDOR = 'humhub/humhub';
 
