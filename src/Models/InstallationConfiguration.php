@@ -4,53 +4,22 @@ declare(strict_types=1);
 namespace MoveElevator\Composer\Models;
 
 use Composer\Config;
+use InvalidArgumentException;
 use MoveElevator\Composer\Statics\InstallationStatic;
 
 final class InstallationConfiguration
 {
-    /**
-     * @var string
-     */
     private $vendorDirectory;
-
-    /**
-     * @var string
-     */
     private $humhubInstallerPackageRootPath;
-
-    /**
-     * @var string
-     */
     private $absoluteProjectRootPath;
-
-    /**
-     * @var string
-     */
     private $webDirectory;
-
-    /**
-     * @var string
-     */
     private $humhubCoreDirectory;
-
-    /**
-     * @var string
-     */
     private $humhubConfigurationDirectory;
-
-    /**
-     * @var string
-     */
     private $humhubProjectModuleDirectory = '';
-
-    /**
-     * @var string
-     */
     private $humhubProjectThemeDirectory = '';
 
     /**
-     * @throws \InvalidArgumentException
-     * @SuppressWarnings(PHPMD.ConstructorNewOperator)
+     * @throws InvalidArgumentException
      */
     public function __construct(
         Config $composerConfig,
@@ -59,15 +28,15 @@ final class InstallationConfiguration
     ) {
         $vendorDirectory = $composerConfig->get('vendor-dir');
 
-        if (empty($vendorDirectory)) {
-            throw new \InvalidArgumentException(
+        if (true === empty($vendorDirectory)) {
+            throw new InvalidArgumentException(
                 'could not find any vendor directory from the composer configuration',
                 1497861291
             );
         }
 
-        if (empty($humhubInstallerPackageRootPath)) {
-            throw new \InvalidArgumentException('could not find the humhub installer package path', 1497861292);
+        if (true === empty($humhubInstallerPackageRootPath)) {
+            throw new InvalidArgumentException('could not find the humhub installer package path', 1497861292);
         }
 
         $this->vendorDirectory = realpath($vendorDirectory);
@@ -102,12 +71,12 @@ final class InstallationConfiguration
 
     public function getVendorDirectory(): string
     {
-        return $this->vendorDirectory;
+        return (string)$this->vendorDirectory;
     }
 
     public function getHumhubInstallerPackageRootPath(): string
     {
-        return $this->humhubInstallerPackageRootPath;
+        return (string)$this->humhubInstallerPackageRootPath;
     }
 
     public function getHumhubCoreDirectory(): string
@@ -153,7 +122,7 @@ final class InstallationConfiguration
         }
 
         if (false === $projectConfigurationDirectory) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 sprintf(
                     'could not find the config file folder under: %s or %s',
                     sprintf('%s/%s', $this->getVendorDirectory(), $configurationDirectory),
@@ -167,7 +136,7 @@ final class InstallationConfiguration
     }
 
     /**
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     private function setAbsoluteProjectRootPath(string $relativeVendorDirectory): void
     {
@@ -175,7 +144,7 @@ final class InstallationConfiguration
         $this->absoluteProjectRootPath = realpath($tempAbsoluteProjectRootPath);
 
         if (false === $this->absoluteProjectRootPath) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'could not find the absolute project root path: ' . $tempAbsoluteProjectRootPath,
                 1497861294
             );

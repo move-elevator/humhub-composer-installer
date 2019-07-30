@@ -56,6 +56,10 @@ Add the following lines to the composer.json of your project:
   }
 ```
 
+### hints for composer installation of humhub
+
+- Composer install and update while take a very long time. The main reason is, that humhub uses bower in composer.
+- You have to use humhub as vcs repository, otherwise the requirements of the humhub composer file wont be fetched.
 
 ## Checks
 Run each command in the current package root directory.
@@ -63,25 +67,19 @@ Run each command in the current package root directory.
 ### Execute PHPUnit tests
 
 ```
-./vendor/bin/phpunit.phar -c ./phpunit.xml --debug --verbose
+./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox
 ```
 
-### Execute PHPMD checks
+### Execute PHPStan checks
 
 ```
-./vendor/bin/phpmd.phar ./src text ./phpmd.xml
+./vendor/bin/phpstan.phar analyse -l max -c ./phpstan.neon ./src/
 ```
 
-### Execute PHPSTAN checks
+### Execute phpcs fixer
 
 ```
-./vendor/bin/phpstan.phar analyse -l 7 ./src
-```
-
-### Execute copy paste detection
-
-```
-./vendor/bin/phpcpd.phar ./src 
+./vendor/bin/phpcs-fixer.phar fix ./src 
 ```
 
 ### Execute checkstyle for PSR2
