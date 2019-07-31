@@ -3,17 +3,20 @@ declare(strict_types=1);
 
 namespace MoveElevator\Composer\Models;
 
-final class MkdirCollection extends \ArrayObject
+use ArrayObject;
+use TypeError;
+
+final class MkdirCollection extends ArrayObject
 {
     /**
      * @param mixed $value
      *
-     * @throws \TypeError
+     * @throws TypeError
      */
-    public function append($value)
+    public function append($value): void
     {
         if (false === is_string($value)) {
-            throw new \TypeError('You only can append Objects of type string');
+            throw new TypeError('You only can append Objects of type string');
         }
 
         parent::append($value);

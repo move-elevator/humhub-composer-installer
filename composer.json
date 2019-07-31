@@ -1,62 +1,63 @@
 {
-  "name": "move-elevator/humhub-composer-installer",
-  "description": "a composer installer for the intranet software humhub.",
-  "keywords": [
-    "installer",
-    "humhub",
-    "composer"
-  ],
-  "type": "library",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "MoveElevator\\Composer\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "MoveElevator\\Composer\\Tests\\": "tests/"
-    }
-  },
-  "require": {
-    "php": ">=7.1",
-    "composer/composer": "~1.5",
-    "symfony/filesystem": "~3.3",
-    "webmozart/glob": "~4.1"
-  },
-  "require-dev": {
-    "tm/tooly-composer-script": "~1.2"
-  },
-  "scripts": {
-    "post-update-cmd": [
-      "Tooly\\ScriptHandler::installPharTools"
+    "name": "move-elevator/humhub-composer-installer",
+    "description": "a composer installer for the intranet software humhub.",
+    "keywords": [
+        "installer",
+        "humhub",
+        "composer"
     ],
-    "post-install-cmd": [
-      "Tooly\\ScriptHandler::installPharTools"
-    ]
-  },
-  "extra": {
-    "tools": {
-      "phpunit": {
-        "url": "https://phar.phpunit.de/phpunit-6.1.0.phar",
-        "force-replace": true
-      },
-      "phpmd": {
-        "url": "https://github.com/mi-schi/phpmd-extension/releases/download/4.2.0/phpmd-extension.phar",
-        "force-replace": true
-      },
-      "phpcpd": {
-        "url": "https://phar.phpunit.de/phpcpd-2.0.4.phar",
-        "force-replace": true
-      },
-      "phpcs": {
-        "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.9.0/phpcs.phar",
-        "force-replace": true
-      },
-      "phpstan": {
-        "url": "https://github.com/phpstan/phpstan/releases/download/0.8.5/phpstan.phar",
-        "force-replace": true
-      }
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MoveElevator\\Composer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MoveElevator\\Composer\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "composer/composer": "^1.8",
+        "symfony/filesystem": "^4.3",
+        "webmozart/glob": "^4.1"
+    },
+    "require-dev": {
+        "tm/tooly-composer-script": "~1.4"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "Tooly\\ScriptHandler::installPharTools"
+        ],
+        "post-install-cmd": [
+            "Tooly\\ScriptHandler::installPharTools"
+        ],
+        "quickcheck": [
+            "./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox",
+            "./vendor/bin/phpstan.phar analyse -l max -c ./phpstan.neon ./src/",
+            "./vendor/bin/phpcs-fixer.phar fix ./src"
+        ]
+    },
+    "extra": {
+        "tools": {
+            "phpcs-fixer": {
+                "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.15.1/php-cs-fixer.phar",
+                "force-replace": true
+            },
+            "phpcs": {
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/phpcs.phar",
+                "force-replace": true
+            },
+            "phpstan": {
+                "url": "https://github.com/phpstan/phpstan/releases/download/0.11.12/phpstan.phar",
+                "force-replace": true
+            },
+            "phpunit": {
+                "url": "https://phar.phpunit.de/phpunit-7.5.14.phar",
+                "force-replace": true
+            }
+        }
     }
-  }
 }

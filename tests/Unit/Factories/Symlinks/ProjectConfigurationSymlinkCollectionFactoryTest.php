@@ -10,7 +10,7 @@ class ProjectConfigurationSymlinkCollectionFactoryTest extends TestCase
 {
     use InstallationConfigurationFixture;
 
-    public function testCreateCollectionWith7Entries()
+    public function testCreateCollectionWith3Entries()
     {
         $vendorDir = __DIR__ . '/../../../Fixture/VendorFolderStructure';
 

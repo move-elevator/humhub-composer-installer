@@ -19,6 +19,9 @@ final class InstallationConfigurationFactory
                 InstallationStatic::DEFAULT_CONFIGURATION_DIRECTORY_RELATIVE_PATH_FROM_INSTALLATION_PACKAGE,
             InstallationStatic::COMPOSER_EXTRA_PROJECT_MODULE_DIRECTORY => null,
             InstallationStatic::COMPOSER_EXTRA_PROJECT_THEME_DIRECTORY => null,
+            InstallationStatic::COMPOSER_EXTRA_PROJECT_GRUNTFILE => null,
+            InstallationStatic::COMPOSER_EXTRA_PROJECT_PACKAGE_JSON => null,
+            InstallationStatic::COMPOSER_EXTRA_PROJECT_PACKAGE_LOCK_JSON => null,
         ];
 
         if (true === isset($composerExtras[InstallationStatic::COMPOSER_EXTRA_ENTRY])) {

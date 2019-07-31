@@ -5,24 +5,9 @@ namespace MoveElevator\Composer\Models;
 
 final class ComposerProjectConfiguration
 {
-    /**
-     * @var string
-     */
     private $webDirectory;
-
-    /**
-     * @var string
-     */
     private $configurationDirectory;
-
-    /**
-     * @var string
-     */
     private $moduleDirectory;
-
-    /**
-     * @var string
-     */
     private $themeDirectory;
 
     public function __construct(string $webDirectory, string $configurationDirectory)
@@ -46,7 +31,7 @@ final class ComposerProjectConfiguration
         return $this->moduleDirectory ?? '';
     }
 
-    public function setModuleDirectory(string $moduleDirectory)
+    public function setModuleDirectory(string $moduleDirectory): void
     {
         $this->moduleDirectory = $moduleDirectory;
     }
@@ -56,7 +41,7 @@ final class ComposerProjectConfiguration
         return $this->themeDirectory ?? '';
     }
 
-    public function setThemeDirectory(string $themeDirectory)
+    public function setThemeDirectory(string $themeDirectory): void
     {
         $this->themeDirectory = $themeDirectory;
     }
